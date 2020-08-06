@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+	--font-family: 'Montserrat', sans-serif;
+
+	/* Neutral */
+	--VeryLightGrayishBlue: hsl(240, 78%, 98%);
+	--LightGrayishBlue: hsl(234, 14%, 74%);
+	--GrayishBlue: hsl(233, 13%, 49%);
+	--DarkGrayishBlue: hsl(232, 13%, 33%);
+
+	/* Primary */
+	--LinearGradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	font-size: 15px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	background-color: var(--VeryLightGrayishBlue);
+	background-image: url(./images/bg-top.svg);
+	background-repeat: no-repeat;
+	background-position: top -50px right -200px;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 5rem 0 5rem;
+	color: var(--GrayishBlue);
+}
+
+.title_header {
+	color: var(--DarkGrayishBlue);
+	font-weight: 700;
+}
+
+.way_pay {
+	font-size: .8em;
+	padding: 0 1rem;
+}
+
+.checkbox_pay {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox {
+	display: none;
+}
+
+.switch {
+	height: 2rem;
+	width: 3.5rem;
+	border-radius: 2rem;
+	padding: 4px;
+	background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	cursor: pointer;
+}
+
+.switch::before {
+	content: '';
+	display: block;
+	background-color: var(--VeryLightGrayishBlue);
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 50%;
+	transform: translateX(0);
+	transition: .3s;
+}
+
+.checkbox:checked ~ .switch {
+	background-image: none;
+	background-color: hsl(236, 72%, 79%);
+}
+
+.checkbox:checked ~ .switch:before {
+	transform: translateX(1.5rem);
+}
+
+.wrapper {
+	margin-bottom: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.article {
+	background-color: #ffffff;
+	text-align: center;
+	color: var(--GrayishBlue);
+	width: 350px;
+	padding: 2rem;
+	border-radius: .5rem;
+	box-shadow: 4px 4px 15px 0 hsl(0, 0%, 0%, .5);
+	margin-bottom: 3rem;
+}
+
+.article_middle {
+	background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	color: #ffffff;
+	z-index: 5;
+}
+
+.dollar_pay {
+	font-size: 4.5em;
+	margin-bottom: 1rem;
+	color: var(--DarkGrayishBlue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dollar_pay span {
+	font-size: .5em;
+	margin-right: .5rem;
+}
+
+.article_middle .dollar_pay {
+	color: #ffffff;
+}
+
+.title_article {
+	font-size: 1.2em;
+	margin-bottom: 1rem;
+}
+
+.off_pay {
+	display: none;
+}
+
+.article ul {
+	padding: 0;
+	margin-bottom: 1rem;
+}
+
+.text {
+	font-size: 1.2em;
+	padding: 1rem 0;
+	border-top: 1px solid var(--LightGrayishBlue);
+}
+
+.text:last-child {
+	border-bottom: 1px solid var(--LightGrayishBlue);
+}
+
+.btn_article,
+.btn_article:active,
+.btn_article:focus {
+	width: 100%;
+	border: 1px solid transparent;
+	color: #ffffff;
+	margin: 1rem 0;
+	background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+	border-radius: .3rem;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: 700;
+	padding: 1rem 0;
+	outline: none;
+	transition: all .5s;
+}
+
+.btn_article:hover {
+	background-color: transparent;
+	background-image: none;
+	color: hsl(237, 63%, 64%);
+	border: 1px solid hsl(237, 63%, 64%);
+}
+
+.article_middle .btn_article:hover {
+	background-color: transparent;
+	background-image: none;
+	color: #ffffff;
+	border: 1px solid #ffffff;
+}
+
+.article_middle .btn_article {
+	background-image: none;
+	background-color: #ffffff;
+	color: hsl(237, 63%, 64%);
+}
+
+@media screen and (min-width: 1024px) {
+	body {
+		background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+		background-position: top right, bottom left;
+	}
+
+	.wrapper {
+		flex-direction: row;
+	}
+
+	.article_middle {
+		padding: 3rem 2rem;
+	}
+
+	.article{
+		margin-bottom: 0;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
